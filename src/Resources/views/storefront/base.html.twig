@@ -1,13 +1,13 @@
 {% sw_extends '@Storefront/storefront/base.html.twig' %}
 
 {% block base_noscript %}
- $WSCTagManagerSW6.config.wscTagManagerMatomo 
-    {% if wscTagManagerMatomo %}
-        <h1>test</h1>
-        <noscript>
-            <iframe src="https://www.googletagmanager.com/ns.html?id=test"
-                    height="0" width="0" style="display:none;visibility:hidden"></iframe>
-        </noscript>
-    {% endif %}
-    {{ parent() }}
+  {% set tagmanagerConfig = config('TagManagerSW6') %}
+  {% if(tagmanagerConfig.config.wscTagManagerMatomo) %}
+    <h1>Test</h1>
+    <noscript>
+        <iframe src="https://www.googletagmanager.com/ns.html?id=test"
+                height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+  {% endif %}
+  {{ parent() }}
 {% endblock %}

@@ -4,7 +4,7 @@ namespace WSC\TagManagerSW6;
 
 use Shopware\Core\Framework\Plugin;
 
-class TagManagerSW6 extends Plugin
+class TagManagerSW6 extends Plugin 
 {
 
     public static function getSubscribedEvents()
